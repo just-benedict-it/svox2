@@ -188,8 +188,8 @@ with torch.no_grad():
         if args.ray_len:
             minv, meanv, maxv = im.min().item(), im.mean().item(), im.max().item()
             im = viridis_cmap(im.cpu().numpy())
-            cv2.putText(im, f"{minv=:.4f} {meanv=:.4f} {maxv=:.4f}", (10, 20),
-                        0, 0.5, [255, 0, 0])
+#             cv2.putText(im, f"{minv=:.4f} {meanv=:.4f} {maxv=:.4f}", (10, 20),
+#                         0, 0.5, [255, 0, 0])
             im = torch.from_numpy(im).to(device=device)
         im.clamp_(0.0, 1.0)
 
